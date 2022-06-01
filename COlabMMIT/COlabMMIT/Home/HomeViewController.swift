@@ -22,13 +22,28 @@ class HomeViewController: UIViewController {
     // MARK: - View Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupFlowLayout()
+        followerCollectionView.backgroundColor = .white
         followerCollectionView.register(UINib(nibName: "FollowerCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "FollowerCollectionViewCell")
         
         
         userCommitCountLabel.text = String(userCommitCount)
+        print(userCommitCount)
         userNameLabel.text = userName
+        followingCountLabel.text = "following " + String(followerCommitCount.count)
         
     }
+    // MARK: - LayOut
+    private func setupFlowLayout() {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets.zero
+        flowLayout.minimumLineSpacing = 10
+        
+        let halfWidth = UIScreen.main.bounds.width / 2
+        flowLayout.itemSize = CGSize(width: halfWidth * 1.83, height: halfWidth * 0.45)
+        self.followerCollectionView.collectionViewLayout = flowLayout
+    }
+    
     
     // MARK: - API Methods
 

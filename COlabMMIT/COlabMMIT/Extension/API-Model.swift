@@ -73,6 +73,7 @@ struct Author: Codable {
 func getApi(user: String) -> Int {
     let booksUrlStr = "https://api.github.com/users/\(user)/events"
     var returnEvent = [Event]()
+    var run = true
     
     // Code Input Point #1
      guard let url = URL(string: booksUrlStr) else {
@@ -114,19 +115,29 @@ func getApi(user: String) -> Int {
              
              let eventlist = try decoder.decode([Event].self, from: data)
              returnEvent = eventlist
+             run = false
+             
 
          } catch {
              print(error)
          }
      }
      task.resume()
-    return countTodayCommits(list: returnEvent)
+    
+    while run {
+        
+    }
+    
+    let counter = countTodayCommits(list: returnEvent)
+    print(user + " " + String(counter))
+    return counter
 }
 
 func countTodayCommits(list:[Event]) -> Int {
     var totalCount = 0
     let today = today()
     for i in list {
+        print(i.type, i.created_at)
         if i.created_at.contains(today) && i.type == "PushEvent" {
             totalCount += 1
         }
