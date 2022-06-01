@@ -7,13 +7,49 @@
 
 import UIKit
 
+// MARK: - UserDefaults Key
+let initialKey = "initialKey"
+let userNameKey = "userNameKey"
+let followerKey = "followerKey"
+
+// MARK: - Master Values
+var userName = "user name"
+var userCommitCount = 0
+var followerNames: [Any] = ["Younkyum"]
+var followerCommitCount: [Int] = [-1]
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // 처음 실행되었을 때 설정 만들기
+        if !UserDefaults.standard.bool(forKey: initialKey) {
+            UserDefaults.standard.set(true, forKey: initialKey)
+            UserDefaults.standard.set("Github", forKey: userNameKey)
+            UserDefaults.standard.set(["Younkyum"], forKey: followerKey)
+            
+            userName = "Github"
+            followerNames = ["Younkyum"]
+            
+        } else {
+            userName = UserDefaults.standard.string(forKey: userNameKey)!
+            followerNames = UserDefaults.standard.array(forKey: followerKey)!
+        }
+        
+        userCommitCount = getApi(user: userName)
+        
+        if followerNames.count >= 1 {
+            for follower in followerNames {
+                if followerCommitCount[0] == -1 {
+                    followerCommitCount[0] = getApi(user: follower as! String)
+                } else {
+                    followerCommitCount.append(getApi(user: follower as! String))
+                }
+            }
+        }
+        
+        // 앱 처음 update시 실행됨 (api)
         return true
     }
 

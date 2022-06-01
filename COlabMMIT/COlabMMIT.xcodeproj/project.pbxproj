@@ -18,6 +18,8 @@
 		415F29CA28478FF80053271B /* UIAlert-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F29C928478FF80053271B /* UIAlert-Extension.swift */; };
 		415F29CD2847902B0053271B /* API-Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F29CC2847902B0053271B /* API-Model.swift */; };
 		415F29CF2847907B0053271B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F29CE2847907B0053271B /* SettingViewController.swift */; };
+		415F29D2284795C60053271B /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F29D0284795C60053271B /* FollowerCollectionViewCell.swift */; };
+		415F29D3284795C60053271B /* FollowerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 415F29D1284795C60053271B /* FollowerCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		415F29C928478FF80053271B /* UIAlert-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlert-Extension.swift"; sourceTree = "<group>"; };
 		415F29CC2847902B0053271B /* API-Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API-Model.swift"; sourceTree = "<group>"; };
 		415F29CE2847907B0053271B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		415F29D0284795C60053271B /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
+		415F29D1284795C60053271B /* FollowerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowerCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 		415F29C528478FAA0053271B /* Follower */ = {
 			isa = PBXGroup;
 			children = (
+				415F29D0284795C60053271B /* FollowerCollectionViewCell.swift */,
+				415F29D1284795C60053271B /* FollowerCollectionViewCell.xib */,
 			);
 			path = Follower;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				415F29D3284795C60053271B /* FollowerCollectionViewCell.xib in Resources */,
 				415F29B628478ABC0053271B /* LaunchScreen.storyboard in Resources */,
 				415F29B328478ABC0053271B /* Assets.xcassets in Resources */,
 				415F29B128478ABA0053271B /* Main.storyboard in Resources */,
@@ -207,6 +214,7 @@
 				415F29CF2847907B0053271B /* SettingViewController.swift in Sources */,
 				415F29AC28478ABA0053271B /* SceneDelegate.swift in Sources */,
 				415F29C828478FC80053271B /* UIView-Extension.swift in Sources */,
+				415F29D2284795C60053271B /* FollowerCollectionViewCell.swift in Sources */,
 				415F29CA28478FF80053271B /* UIAlert-Extension.swift in Sources */,
 				415F29C128478F690053271B /* HomeViewController.swift in Sources */,
 			);

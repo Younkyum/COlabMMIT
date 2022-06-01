@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FollowerCollectionViewCell" reuseIdentifier="FollowerCollectionViewCell" id="gTV-IL-0wX" customClass="FollowerCollectionViewCell" customModule="COlabMMIT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="440" height="92"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="440" height="92"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AfX-SL-pdi">
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="92"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today Commits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE7-Zo-wz0">
+                                <rect key="frame" x="15" y="15" width="123.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiC-RT-BlB">
+                                <rect key="frame" x="15" y="36" width="20.5" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHH-4L-kvz">
+                                <rect key="frame" x="348" y="31" width="67" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JiC-RT-BlB" firstAttribute="top" secondItem="TE7-Zo-wz0" secondAttribute="bottom" id="3ZZ-M3-l4w"/>
+                            <constraint firstItem="gHH-4L-kvz" firstAttribute="centerY" secondItem="AfX-SL-pdi" secondAttribute="centerY" id="DZ4-fT-iaH"/>
+                            <constraint firstItem="TE7-Zo-wz0" firstAttribute="leading" secondItem="AfX-SL-pdi" secondAttribute="leading" constant="15" id="Sjm-bh-VSf"/>
+                            <constraint firstItem="TE7-Zo-wz0" firstAttribute="top" secondItem="AfX-SL-pdi" secondAttribute="top" constant="15" id="WDv-Ai-VWb"/>
+                            <constraint firstItem="JiC-RT-BlB" firstAttribute="leading" secondItem="AfX-SL-pdi" secondAttribute="leading" constant="15" id="bc2-zK-Vh4"/>
+                            <constraint firstAttribute="trailing" secondItem="gHH-4L-kvz" secondAttribute="trailing" constant="25" id="kKe-7D-jnk"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="AfX-SL-pdi" secondAttribute="bottom" id="DuD-Ru-FdM"/>
+                <constraint firstItem="AfX-SL-pdi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="d4v-iT-PUE"/>
+                <constraint firstItem="AfX-SL-pdi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mwA-R1-k4l"/>
+                <constraint firstAttribute="trailing" secondItem="AfX-SL-pdi" secondAttribute="trailing" id="xvh-K1-5OJ"/>
+            </constraints>
+            <size key="customSize" width="440" height="92"/>
+            <connections>
+                <outlet property="commitCount" destination="JiC-RT-BlB" id="0Um-27-8nH"/>
+                <outlet property="todayCommitLabel" destination="TE7-Zo-wz0" id="mSb-Ac-owx"/>
+                <outlet property="userName" destination="gHH-4L-kvz" id="29f-Cu-Vaz"/>
+            </connections>
+            <point key="canvasLocation" x="102.89855072463769" y="68.303571428571431"/>
+        </collectionViewCell>
+    </objects>
+</document>

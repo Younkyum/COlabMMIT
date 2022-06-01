@@ -68,3 +68,76 @@ struct Author: Codable {
     let name: String
 }
 
+
+// Event user
+func getApi(user: String) -> Int {
+    let booksUrlStr = "https://api.github.com/users/\(user)/events"
+    var returnEvent = [Event]()
+    
+    // Code Input Point #1
+     guard let url = URL(string: booksUrlStr) else {
+         fatalError("Invalid URL")
+     }
+     
+     let session = URLSession.shared
+     let task = session.dataTask(with: url) { (data, response, error) in
+         if let error = error { // 에러가 발생함
+             print(error)
+             return
+         }
+         
+         guard let httpResponse = response as? HTTPURLResponse else {
+             return
+         }
+         
+         guard (200...299).contains(httpResponse.statusCode) else {
+             return
+         }
+         
+         guard let data = data else { // 데이터 동기화 안될경우 오류 발생
+             fatalError("Invalid Data")
+         }
+         
+         do {
+             let decoder = JSONDecoder()
+             decoder.dateDecodingStrategy = .iso8601
+             
+             decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
+                 let container = try decoder.singleValueContainer()
+                 let dateStr = try container.decode(String.self)
+                 
+                 let formatter = ISO8601DateFormatter()
+                 formatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
+                 
+                 return formatter.date(from: dateStr)!
+             })
+             
+             let eventlist = try decoder.decode([Event].self, from: data)
+             returnEvent = eventlist
+
+         } catch {
+             print(error)
+         }
+     }
+     task.resume()
+    return countTodayCommits(list: returnEvent)
+}
+
+func countTodayCommits(list:[Event]) -> Int {
+    var totalCount = 0
+    let today = today()
+    for i in list {
+        if i.created_at.contains(today) && i.type == "PushEvent" {
+            totalCount += 1
+        }
+    }
+    return totalCount
+}
+
+// String 형태로 오늘 날짜 출력
+func today() -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    let now = formatter.string(from: Date())
+    return now
+}

@@ -67,6 +67,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uDS-8G-riE" id="HWw-aB-tpA"/>
+                                    <outlet property="delegate" destination="uDS-8G-riE" id="FVN-gB-R3d"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dVj-aX-KY9"/>
@@ -107,6 +111,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="followerCollectionView" destination="i4G-LD-dtr" id="HT7-SX-Fb8"/>
+                        <outlet property="followingCountLabel" destination="I0I-oP-wd8" id="a3H-u6-hJd"/>
+                        <outlet property="todayCommitLabel" destination="wMK-XH-s27" id="fik-dk-OlM"/>
+                        <outlet property="userCommitCountLabel" destination="m9k-Cr-hDU" id="77i-b4-5aE"/>
+                        <outlet property="userNameLabel" destination="yKY-da-WSu" id="2XD-6N-gor"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IYc-qY-aY9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
