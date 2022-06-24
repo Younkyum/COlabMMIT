@@ -20,6 +20,13 @@ class HomeViewController: UIViewController {
     
     
     // MARK: - View Cycles
+    
+    override func viewWillAppear(_ animated: Bool) {
+        userNameLabel.text = userName
+        userCommitCount = getApi(user: userName)
+        userCommitCountLabel.text = String(userCommitCount)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupFlowLayout()
@@ -30,7 +37,7 @@ class HomeViewController: UIViewController {
         userCommitCountLabel.text = String(userCommitCount)
         print(userCommitCount)
         userNameLabel.text = userName
-        followingCountLabel.text = "following " + String(followerCommitCount.count)
+        followingCountLabel.text = "Following " + String(followerCommitCount.count)
         
     }
     // MARK: - LayOut

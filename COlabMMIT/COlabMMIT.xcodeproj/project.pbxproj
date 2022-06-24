@@ -20,6 +20,9 @@
 		415F29CF2847907B0053271B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F29CE2847907B0053271B /* SettingViewController.swift */; };
 		415F29D2284795C60053271B /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415F29D0284795C60053271B /* FollowerCollectionViewCell.swift */; };
 		415F29D3284795C60053271B /* FollowerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 415F29D1284795C60053271B /* FollowerCollectionViewCell.xib */; };
+		418D74A628488B20008B9BA2 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418D74A428488B20008B9BA2 /* SettingTableViewCell.swift */; };
+		418D74A728488B20008B9BA2 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 418D74A528488B20008B9BA2 /* SettingTableViewCell.xib */; };
+		418D74AA28488D77008B9BA2 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418D74A928488D77008B9BA2 /* UserSettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		415F29CE2847907B0053271B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		415F29D0284795C60053271B /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		415F29D1284795C60053271B /* FollowerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowerCollectionViewCell.xib; sourceTree = "<group>"; };
+		418D74A428488B20008B9BA2 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		418D74A528488B20008B9BA2 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		418D74A928488D77008B9BA2 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 		415F29BE28478F3C0053271B /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				418D74A828488CE8008B9BA2 /* Setting Options */,
 				415F29CE2847907B0053271B /* SettingViewController.swift */,
 			);
 			path = Setting;
@@ -132,8 +139,18 @@
 		415F29C628478FB00053271B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				418D74A428488B20008B9BA2 /* SettingTableViewCell.swift */,
+				418D74A528488B20008B9BA2 /* SettingTableViewCell.xib */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		418D74A828488CE8008B9BA2 /* Setting Options */ = {
+			isa = PBXGroup;
+			children = (
+				418D74A928488D77008B9BA2 /* UserSettingViewController.swift */,
+			);
+			path = "Setting Options";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +214,7 @@
 				415F29D3284795C60053271B /* FollowerCollectionViewCell.xib in Resources */,
 				415F29B628478ABC0053271B /* LaunchScreen.storyboard in Resources */,
 				415F29B328478ABC0053271B /* Assets.xcassets in Resources */,
+				418D74A728488B20008B9BA2 /* SettingTableViewCell.xib in Resources */,
 				415F29B128478ABA0053271B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,8 +230,10 @@
 				415F29AA28478ABA0053271B /* AppDelegate.swift in Sources */,
 				415F29C328478F7F0053271B /* NewFollowerViewController.swift in Sources */,
 				415F29CF2847907B0053271B /* SettingViewController.swift in Sources */,
+				418D74AA28488D77008B9BA2 /* UserSettingViewController.swift in Sources */,
 				415F29AC28478ABA0053271B /* SceneDelegate.swift in Sources */,
 				415F29C828478FC80053271B /* UIView-Extension.swift in Sources */,
+				418D74A628488B20008B9BA2 /* SettingTableViewCell.swift in Sources */,
 				415F29D2284795C60053271B /* FollowerCollectionViewCell.swift in Sources */,
 				415F29CA28478FF80053271B /* UIAlert-Extension.swift in Sources */,
 				415F29C128478F690053271B /* HomeViewController.swift in Sources */,

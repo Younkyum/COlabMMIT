@@ -8,11 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="lBv-eg-wst">
             <objects>
                 <navigationController id="AFS-xo-Z33" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="tCB-RB-Chm"/>
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="tCB-RB-Chm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8ct-bi-ndK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -182,11 +182,11 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력</string>
             </objects>
             <point key="canvasLocation" x="1890" y="-119"/>
         </scene>
-        <!--Settings-->
+        <!--Navigation Controller-->
         <scene sceneID="RkD-h3-2eX">
             <objects>
                 <navigationController id="tWN-SJ-hjH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="QgL-sg-gp5"/>
+                    <tabBarItem key="tabBarItem" title="" image="gear" catalog="system" id="QgL-sg-gp5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pxu-T6-IzK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -216,6 +216,10 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hGP-Ys-LzJ">
                                 <rect key="frame" x="0.0" y="145" width="414" height="668"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hDU-BC-AWR" id="SuV-if-wud"/>
+                                    <outlet property="delegate" destination="hDU-BC-AWR" id="Eti-Zh-Yf7"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rpn-yo-vxj"/>
@@ -230,6 +234,9 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gPh-Nv-5d3"/>
+                    <connections>
+                        <outlet property="settingTableView" destination="hGP-Ys-LzJ" id="35P-Ej-mw9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AuC-st-8V4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -283,10 +290,10 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력</string>
             </objects>
             <point key="canvasLocation" x="1091" y="1221"/>
         </scene>
-        <!--View Controller-->
+        <!--User Setting View Controller-->
         <scene sceneID="y2n-PX-rGe">
             <objects>
-                <viewController id="KhU-7z-L5o" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserSettingViewController" id="KhU-7z-L5o" customClass="UserSettingViewController" customModule="COlabMMIT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NKZ-5c-IHj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,6 +307,9 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력</string>
                                 <rect key="frame" x="169" y="136" width="76" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmButtonPushed:" destination="KhU-7z-L5o" eventType="touchUpInside" id="CdI-X7-pQQ"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zP-wb-ydE">
                                 <rect key="frame" x="20" y="202" width="374" height="610"/>
@@ -337,6 +347,9 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fYL-v9-mJW"/>
+                    <connections>
+                        <outlet property="userNameField" destination="sWL-ra-xv6" id="4uw-Ik-S4N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRn-7k-Mb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -103,15 +103,7 @@ func getApi(user: String) -> Int {
              let decoder = JSONDecoder()
              decoder.dateDecodingStrategy = .iso8601
              
-             decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
-                 let container = try decoder.singleValueContainer()
-                 let dateStr = try container.decode(String.self)
-                 
-                 let formatter = ISO8601DateFormatter()
-                 formatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
-                 
-                 return formatter.date(from: dateStr)!
-             })
+             
              
              let eventlist = try decoder.decode([Event].self, from: data)
              returnEvent = eventlist
@@ -137,8 +129,8 @@ func countTodayCommits(list:[Event]) -> Int {
     var totalCount = 0
     let today = today()
     for i in list {
-        print(i.type, i.created_at)
-        if i.created_at.contains(today) && i.type == "PushEvent" {
+        print(i.type, returnToday(created: i.created_at))
+        if returnToday(created: i.created_at).contains(today) && i.type == "PushEvent" {
             totalCount += 1
         }
     }
@@ -151,4 +143,13 @@ func today() -> String {
     formatter.dateFormat = "yyyy-MM-dd"
     let now = formatter.string(from: Date())
     return now
+}
+
+func returnToday(created: String) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    let a = formatter.date(from: created)!
+    let date = formatter.string(from: Date(timeInterval: 32400, since: a))
+    print(date)
+    return date
 }
