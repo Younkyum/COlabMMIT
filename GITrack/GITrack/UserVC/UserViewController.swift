@@ -17,12 +17,25 @@ class UserViewController: UIViewController {
     @IBOutlet weak var userFollowerLabel: UILabel!
     @IBOutlet weak var userCreatedAtLabel: UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        completeView()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        completeView()
+    }
+    
+    func completeView() {
+        user = UserDefaults.standard.string(forKey: userkey)!
+        userInfo = getUserAPI(user: user)
+        
         imageDownload(url: URL(string: userInfo.avatarURL)!)
         
         changeDate()
         
+        todayCommitLabel.text = String(getTodayCommit(user: user))
         userIdLabel.text = userInfo.userID
         userNameLabel.text = userInfo.userName
         userFollowingLabel.text = String(userInfo.followings)
@@ -38,8 +51,6 @@ class UserViewController: UIViewController {
         let a = formatter.date(from: userInfo.createdAt)!
         formatter.dateFormat = "yyyy-MM-dd"
         userInfo.createdAt = formatter.string(from: Date(timeInterval: 32400, since: a))
-        
-        
     }
     
     func imageDownload(url: URL) {
@@ -64,6 +75,14 @@ class UserViewController: UIViewController {
             }
         }.resume()
     }
-
+    
+    @IBAction func reloadButtonPush(_ sender: UIButton) {
+        userInfo = getUserAPI(user: user)
+        completeView()
+    }
+    
+    @IBAction func changeButtonPush(_ sender: Any) {
+        
+    }
     
 }

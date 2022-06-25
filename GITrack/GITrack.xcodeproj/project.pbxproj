@@ -17,6 +17,8 @@
 		41E7398828660BEE0039958D /* extension-UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7398728660BEE0039958D /* extension-UIAlert.swift */; };
 		41E7398B286622B40039958D /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7398A286622B40039958D /* UserViewController.swift */; };
 		41E7398E286624890039958D /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7398D286624890039958D /* APICaller.swift */; };
+		41E739902866CEFD0039958D /* UserChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7398F2866CEFC0039958D /* UserChangeViewController.swift */; };
+		41E739922866E7770039958D /* API_commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E739912866E7770039958D /* API_commit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		41E7398728660BEE0039958D /* extension-UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension-UIAlert.swift"; sourceTree = "<group>"; };
 		41E7398A286622B40039958D /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		41E7398D286624890039958D /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		41E7398F2866CEFC0039958D /* UserChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChangeViewController.swift; sourceTree = "<group>"; };
+		41E739912866E7770039958D /* API_commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_commit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				41E739822865FF3F0039958D /* API_user.swift */,
+				41E739912866E7770039958D /* API_commit.swift */,
 			);
 			path = API_model;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				41E7398A286622B40039958D /* UserViewController.swift */,
+				41E7398F2866CEFC0039958D /* UserChangeViewController.swift */,
 			);
 			path = UserVC;
 			sourceTree = "<group>";
@@ -182,11 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E739922866E7770039958D /* API_commit.swift in Sources */,
 				41E7398828660BEE0039958D /* extension-UIAlert.swift in Sources */,
 				41E7398B286622B40039958D /* UserViewController.swift in Sources */,
 				41E739832865FF3F0039958D /* API_user.swift in Sources */,
 				41E7398E286624890039958D /* APICaller.swift in Sources */,
 				41E7398528660BB70039958D /* extension-UIView.swift in Sources */,
+				41E739902866CEFD0039958D /* UserChangeViewController.swift in Sources */,
 				41E7396E2865FEA00039958D /* AppDelegate.swift in Sources */,
 				41E739702865FEA00039958D /* SceneDelegate.swift in Sources */,
 			);

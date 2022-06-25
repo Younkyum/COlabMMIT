@@ -10,23 +10,20 @@ import UIKit
 var userInfo = UserUse(userID: "userID", userName: "userName", todayCommit: -1, followers: -1, followings: -1, createdAt: "createdAt", avatarURL: "avavatarURL")
 let userkey = "userkey"
 let initialkey = "initialkey"
+var user = "user"
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        var user = "user"
+        
         
         if !UserDefaults.standard.bool(forKey: initialkey) {
             UserDefaults.standard.set(true, forKey: initialkey)
             UserDefaults.standard.set("Younkyum", forKey: userkey)
             user = "Younkyum"
-        } else {
-            user = UserDefaults.standard.string(forKey: userkey)!
         }
-        
-        userInfo = getUserAPI(user: user)
-        
+
         return true
     }
 
