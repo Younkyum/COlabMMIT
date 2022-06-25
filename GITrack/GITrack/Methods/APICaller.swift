@@ -41,7 +41,6 @@ func getUserAPI(user: String) -> UserUse {
 
             let rawValue = try decoder.decode(User.self, from: data)
             
-            print(rawValue)
             
             outValue.userID = rawValue.login
             outValue.userName = rawValue.name ?? rawValue.login
@@ -50,7 +49,6 @@ func getUserAPI(user: String) -> UserUse {
             outValue.createdAt = rawValue.created_at
             outValue.avatarURL = rawValue.avatar_url
             
-            print(outValue)
             
             run = false
             
@@ -71,8 +69,8 @@ func getUserAPI(user: String) -> UserUse {
 
 func getTodayCommit(user: String) -> Int {
     var run = true
-    let userUrl = "https://api.github.com/users/\(user)/repos"
-    var userRepos = [userRepo(name: "userRepo")]
+    let userUrl = "https://api.github.com/users/\(user)/events"
+    var userRepos = [Event(type: "type", created_at: "created_at")]
 
     guard let url = URL(string: userUrl) else {
         fatalError("Invalid URL")
@@ -101,7 +99,7 @@ func getTodayCommit(user: String) -> Int {
             let decoder = JSONDecoder()
 
             
-            userRepos = try decoder.decode([userRepo].self, from: data)
+            userRepos = try decoder.decode([Event].self, from: data)
 
             
             run = false
@@ -114,13 +112,23 @@ func getTodayCommit(user: String) -> Int {
     while run {
     }
     
+    let today = todayToString()
     var todaySum = 0
     
-    for repo in userRepos {
-        todaySum += commitCounter(repo: repo.name, user: user)
+    for userEvent in userRepos {
+        print(changeDateForCommit(date: userEvent.created_at))
+        if today <= changeDateForCommit(date: userEvent.created_at) {
+            if userEvent.type == "CreateEvent" || userEvent.type == "PushEvent" {
+                todaySum += 1
+            }
+        } else {
+            break
+        }
     }
+    
     return todaySum
 }
+/*
 
 func commitCounter(repo: String, user: String) -> Int {
     var run = true
@@ -178,6 +186,7 @@ func commitCounter(repo: String, user: String) -> Int {
     }
     return sum
 }
+ */
 
 func changeDateForCommit(date: String) -> String {
     let formatter = DateFormatter()
@@ -193,3 +202,5 @@ func todayToString() -> String {
     formatter.dateFormat = "yyyy-MM-dd"
     return formatter.string(from: Date(timeIntervalSinceNow: 0))
 }
+
+

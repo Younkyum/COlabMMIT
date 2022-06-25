@@ -22,3 +22,8 @@ struct Commit: Codable {
 struct Author: Codable {
     var date: String
 }
+
+struct Event: Codable {
+    var type: String
+    var created_at: String
+}

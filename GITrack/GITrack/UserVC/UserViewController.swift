@@ -47,7 +47,6 @@ class UserViewController: UIViewController {
     func changeDate() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        print(userInfo.createdAt)
         let a = formatter.date(from: userInfo.createdAt)!
         formatter.dateFormat = "yyyy-MM-dd"
         userInfo.createdAt = formatter.string(from: Date(timeInterval: 32400, since: a))
@@ -64,12 +63,10 @@ class UserViewController: UIViewController {
                 let data = data, error == nil,
                 let image = UIImage(data: data)
                 else {
-                    print("Download image fail : \(url)")
                     return
             }
 
             DispatchQueue.main.async() {[weak self] in
-                print("Download image success \(url)")
 
                 self?.userAvatarImage.image = image
             }

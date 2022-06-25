@@ -9,24 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Followers-->
-        <scene sceneID="2Ot-Bv-l9P">
-            <objects>
-                <viewController id="tG9-bg-LEk" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8kW-oq-qr9">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="lEh-1k-BNg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Followers" image="person.2" catalog="system" selectedImage="person.2" id="t8i-gi-UTY">
-                        <color key="badgeColor" systemColor="linkColor"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8N4-ID-Ov3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-135" y="299"/>
-        </scene>
         <!--User-->
         <scene sceneID="tG4-Y8-zSX">
             <objects>
@@ -246,6 +228,58 @@
             </objects>
             <point key="canvasLocation" x="578" y="-392"/>
         </scene>
+        <!--Followers-->
+        <scene sceneID="1ck-VO-qcY">
+            <objects>
+                <navigationController id="xYT-zk-Cld" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Followers" image="person.2" catalog="system" id="pkh-tL-YKc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HcZ-aC-WmG">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aIK-3n-IhZ" kind="relationship" relationship="rootViewController" id="dBV-Ca-Y8V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="51e-Sh-Jjc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183" y="345"/>
+        </scene>
+        <!--Follower View Controller-->
+        <scene sceneID="fnz-kV-2k5">
+            <objects>
+                <viewController storyboardIdentifier="FollowerViewController" id="aIK-3n-IhZ" customClass="FollowerViewController" customModule="GITrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uWu-nc-9iH">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-Th-gLt">
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="aIK-3n-IhZ" id="LMf-rU-teL"/>
+                                    <outlet property="delegate" destination="aIK-3n-IhZ" id="sm5-Ke-hrn"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DTP-Al-aYO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DTP-Al-aYO" firstAttribute="bottom" secondItem="mH3-Th-gLt" secondAttribute="bottom" id="30J-f6-Ist"/>
+                            <constraint firstItem="mH3-Th-gLt" firstAttribute="leading" secondItem="DTP-Al-aYO" secondAttribute="leading" id="PfG-NO-2z2"/>
+                            <constraint firstItem="DTP-Al-aYO" firstAttribute="trailing" secondItem="mH3-Th-gLt" secondAttribute="trailing" id="SUq-js-0WH"/>
+                            <constraint firstItem="mH3-Th-gLt" firstAttribute="top" secondItem="DTP-Al-aYO" secondAttribute="top" id="kaa-dX-ybJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="osM-za-ma9"/>
+                    <connections>
+                        <outlet property="followerTableView" destination="mH3-Th-gLt" id="95k-hE-0wb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ql-83-WAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="577" y="345"/>
+        </scene>
         <!--Item-->
         <scene sceneID="2yh-6g-qYO">
             <objects>
@@ -301,15 +335,24 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력  If you do not know
                                     <action selector="confirmButtonPush:" destination="4Ym-ae-iP2" eventType="touchUpInside" id="YDt-kQ-21F"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4UN-fi-vUF">
+                                <rect key="frame" x="170" y="397" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="FTo-jy-lxK"/>
+                                    <constraint firstAttribute="height" constant="50" id="Y9e-cO-qsc"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UyX-Cb-SkW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="T3t-pF-mgG" firstAttribute="top" secondItem="ux5-np-d8L" secondAttribute="bottom" id="1r8-Rp-SVt"/>
+                            <constraint firstItem="4UN-fi-vUF" firstAttribute="centerY" secondItem="nKh-yA-aIJ" secondAttribute="centerY" id="51Y-9k-cAg"/>
                             <constraint firstItem="T3t-pF-mgG" firstAttribute="leading" secondItem="UyX-Cb-SkW" secondAttribute="leading" constant="20" id="6NQ-Gd-ivb"/>
                             <constraint firstItem="Dab-Dd-c59" firstAttribute="top" secondItem="szx-uv-dGs" secondAttribute="bottom" constant="30" id="CRS-84-vIS"/>
                             <constraint firstItem="Dab-Dd-c59" firstAttribute="leading" secondItem="UyX-Cb-SkW" secondAttribute="leading" constant="25" id="F2g-wh-Hqw"/>
                             <constraint firstItem="UyX-Cb-SkW" firstAttribute="trailing" secondItem="Dab-Dd-c59" secondAttribute="trailing" constant="25" id="F3F-mx-2hZ"/>
+                            <constraint firstItem="4UN-fi-vUF" firstAttribute="centerX" secondItem="nKh-yA-aIJ" secondAttribute="centerX" id="Jze-0G-QO4"/>
                             <constraint firstItem="ux5-np-d8L" firstAttribute="leading" secondItem="UyX-Cb-SkW" secondAttribute="leading" constant="25" id="LsM-Z3-1ns"/>
                             <constraint firstItem="szx-uv-dGs" firstAttribute="centerX" secondItem="nKh-yA-aIJ" secondAttribute="centerX" id="M6y-LV-e2M"/>
                             <constraint firstItem="szx-uv-dGs" firstAttribute="top" secondItem="T3t-pF-mgG" secondAttribute="bottom" constant="50" id="XMT-aO-cEm"/>
@@ -322,6 +365,7 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력  If you do not know
                     <navigationItem key="navigationItem" title="User Change" id="Yl8-A4-VuT"/>
                     <connections>
                         <outlet property="inputField" destination="ux5-np-d8L" id="MIS-vX-Te6"/>
+                        <outlet property="waitIndicator" destination="4UN-fi-vUF" id="SJB-Ks-BgW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGR-fP-VDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -339,6 +383,7 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력  If you do not know
                     </tabBar>
                     <connections>
                         <segue destination="off-xm-Cba" kind="relationship" relationship="viewControllers" id="enA-Ce-1Qg"/>
+                        <segue destination="xYT-zk-Cld" kind="relationship" relationship="viewControllers" id="iJL-hs-A0V"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1D-HE-BRn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

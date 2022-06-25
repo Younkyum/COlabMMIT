@@ -12,15 +12,19 @@ class UserChangeViewController: UIViewController {
     
     @IBOutlet weak var inputField: UITextField!
     
+    @IBOutlet weak var waitIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        waitIndicator.startAnimating()
+        waitIndicator.alpha = 0
         // Do any additional setup after loading the view.
     }
     
     @IBAction func confirmButtonPush(_ sender: Any) {
+        waitIndicator.alpha = 1
         getUserIsReal(user: self.inputField.text!)
+        waitIndicator.stopAnimating()
     }
     
     func getUserIsReal(user: String) {

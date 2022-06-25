@@ -10,6 +10,7 @@ import UIKit
 var userInfo = UserUse(userID: "userID", userName: "userName", todayCommit: -1, followers: -1, followings: -1, createdAt: "createdAt", avatarURL: "avavatarURL")
 let userkey = "userkey"
 let initialkey = "initialkey"
+let followerkey = "followerkey"
 var user = "user"
 
 @main
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !UserDefaults.standard.bool(forKey: initialkey) {
             UserDefaults.standard.set(true, forKey: initialkey)
             UserDefaults.standard.set("Younkyum", forKey: userkey)
+            UserDefaults.standard.set(["String"], forKey: followerkey)
             user = "Younkyum"
         }
 
