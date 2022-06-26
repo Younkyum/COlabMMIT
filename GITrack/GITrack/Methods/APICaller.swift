@@ -204,3 +204,34 @@ func todayToString() -> String {
 }
 
 
+func getAvatar(user: String) -> UIImage {
+    var run = true
+    var returnImage = UIImage(named: "noting")
+    let imageURL = "https://avatars.githubusercontent.com/\(user)"
+    guard let url = URL(string: imageURL) else {
+        fatalError("Invalid URL")
+    }
+    
+    var request = URLRequest(url: url)
+    request.httpMethod = "GET"
+
+    URLSession.shared.dataTask(with: request) { data, response, error in
+        guard
+            let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+            let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+            let data = data, error == nil,
+            let image = UIImage(data: data)
+            else {
+                return
+        }
+        
+        returnImage = image
+        run = false
+
+    }.resume()
+    
+    while run {
+    }
+    
+    return returnImage ?? UIImage(systemName: "person")!
+}

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		419887DB2868C4490089587C /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419887D92868C4490089587C /* FollowerTableViewCell.swift */; };
+		419887DC2868C4490089587C /* FollowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 419887DA2868C4490089587C /* FollowerTableViewCell.xib */; };
 		41E7396E2865FEA00039958D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7396D2865FEA00039958D /* AppDelegate.swift */; };
 		41E739702865FEA00039958D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7396F2865FEA00039958D /* SceneDelegate.swift */; };
 		41E739752865FEA00039958D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E739732865FEA00039958D /* Main.storyboard */; };
@@ -20,13 +22,11 @@
 		41E739902866CEFD0039958D /* UserChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7398F2866CEFC0039958D /* UserChangeViewController.swift */; };
 		41E739922866E7770039958D /* API_commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E739912866E7770039958D /* API_commit.swift */; };
 		41E7399528678C460039958D /* FollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7399428678C460039958D /* FollowerViewController.swift */; };
-		41E7399828678CED0039958D /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7399628678CED0039958D /* FollowerTableViewCell.swift */; };
-		41E7399928678CED0039958D /* FollowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E7399728678CED0039958D /* FollowerTableViewCell.xib */; };
-		41E7399C2867970B0039958D /* PlusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7399A2867970B0039958D /* PlusTableViewCell.swift */; };
-		41E7399D2867970B0039958D /* PlusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E7399B2867970B0039958D /* PlusTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		419887D92868C4490089587C /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
+		419887DA2868C4490089587C /* FollowerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowerTableViewCell.xib; sourceTree = "<group>"; };
 		41E7396A2865FEA00039958D /* GITrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GITrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41E7396D2865FEA00039958D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41E7396F2865FEA00039958D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,10 +42,6 @@
 		41E7398F2866CEFC0039958D /* UserChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChangeViewController.swift; sourceTree = "<group>"; };
 		41E739912866E7770039958D /* API_commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_commit.swift; sourceTree = "<group>"; };
 		41E7399428678C460039958D /* FollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewController.swift; sourceTree = "<group>"; };
-		41E7399628678CED0039958D /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
-		41E7399728678CED0039958D /* FollowerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowerTableViewCell.xib; sourceTree = "<group>"; };
-		41E7399A2867970B0039958D /* PlusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusTableViewCell.swift; sourceTree = "<group>"; };
-		41E7399B2867970B0039958D /* PlusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlusTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,10 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				41E7399428678C460039958D /* FollowerViewController.swift */,
-				41E7399628678CED0039958D /* FollowerTableViewCell.swift */,
-				41E7399728678CED0039958D /* FollowerTableViewCell.xib */,
-				41E7399A2867970B0039958D /* PlusTableViewCell.swift */,
-				41E7399B2867970B0039958D /* PlusTableViewCell.xib */,
+				419887D92868C4490089587C /* FollowerTableViewCell.swift */,
+				419887DA2868C4490089587C /* FollowerTableViewCell.xib */,
 			);
 			path = FollowerVC;
 			sourceTree = "<group>";
@@ -200,9 +194,8 @@
 			files = (
 				41E7397A2865FEA10039958D /* LaunchScreen.storyboard in Resources */,
 				41E739772865FEA10039958D /* Assets.xcassets in Resources */,
-				41E7399D2867970B0039958D /* PlusTableViewCell.xib in Resources */,
 				41E739752865FEA00039958D /* Main.storyboard in Resources */,
-				41E7399928678CED0039958D /* FollowerTableViewCell.xib in Resources */,
+				419887DC2868C4490089587C /* FollowerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,14 +208,13 @@
 			files = (
 				41E739922866E7770039958D /* API_commit.swift in Sources */,
 				41E7398828660BEE0039958D /* extension-UIAlert.swift in Sources */,
-				41E7399828678CED0039958D /* FollowerTableViewCell.swift in Sources */,
+				419887DB2868C4490089587C /* FollowerTableViewCell.swift in Sources */,
 				41E7398B286622B40039958D /* UserViewController.swift in Sources */,
 				41E739832865FF3F0039958D /* API_user.swift in Sources */,
 				41E7398E286624890039958D /* APICaller.swift in Sources */,
 				41E7398528660BB70039958D /* extension-UIView.swift in Sources */,
 				41E739902866CEFD0039958D /* UserChangeViewController.swift in Sources */,
 				41E7396E2865FEA00039958D /* AppDelegate.swift in Sources */,
-				41E7399C2867970B0039958D /* PlusTableViewCell.swift in Sources */,
 				41E7399528678C460039958D /* FollowerViewController.swift in Sources */,
 				41E739702865FEA00039958D /* SceneDelegate.swift in Sources */,
 			);

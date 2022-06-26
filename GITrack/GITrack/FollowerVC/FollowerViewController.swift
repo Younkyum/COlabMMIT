@@ -15,7 +15,8 @@ class FollowerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        followerTableView.register(UINib(nibName: "FollowerTableViewCell", bundle: nil), forCellReuseIdentifier: "FollowerTableViewCell")
         // Do any additional setup after loading the view.
     }
     
@@ -25,45 +26,32 @@ class FollowerViewController: UIViewController {
 
 extension FollowerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let list = UserDefaults.standard.array(forKey: followerkey)!
         
-        return list.count - 1
+        print(followerList)
+        return followerList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let list = UserDefaults.standard.array(forKey: followerkey)!
-        switch indexPath.row {
-        case list.count - 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlusTableViewCell", for: indexPath) as? PlusTableViewCell else { return UITableViewCell() }
-            return cell
-        default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FollowerTableViewCell", for: indexPath) as? FollowerTableViewCell else { return UITableViewCell() }
-            
-            cell.userIDLabel.text = list[indexPath.row + 1] as! String
-            cell.commitCountLabel.text = String(getTodayCommit(user: cell.userIDLabel.text!))
-            /*
-            var request = URLRequest(url: " ")
-            request.httpMethod = "GET"
-
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                guard
-                    let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                    let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                    let data = data, error == nil,
-                    let image = UIImage(data: data)
-                    else {
-                        return
-                }
-
-                DispatchQueue.main.async() {[weak self] in
-
-                    cell.userFaceImage.image = image
-                }
-            }.resume()
-            */
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FollowerTableViewCell", for: indexPath) as? FollowerTableViewCell else { return UITableViewCell() }
+        
+        cell.followerCommitLabel.text = String(followerCommit[indexPath.row])
+        cell.followerIDLabel.text = followerList[indexPath.row]
+        cell.followerAvatarImage.image = followerImage[indexPath.row]
+        cell.plusImage.alpha = 0
+        
+        if followerList[indexPath.row] == "plus" {
+            cell.followerIDLabel.alpha = 0
+            cell.followerCommitLabel.alpha = 0
+            cell.followerAvatarImage.alpha = 0
+            cell.plusImage.alpha = 1
         }
+        
+        
+        return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
+    }
     
 }

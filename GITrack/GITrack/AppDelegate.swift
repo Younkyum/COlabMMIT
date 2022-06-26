@@ -12,6 +12,9 @@ let userkey = "userkey"
 let initialkey = "initialkey"
 let followerkey = "followerkey"
 var user = "user"
+var followerList = ["followerKey"]
+var followerCommit = [-1]
+var followerImage = [UIImage(systemName: "person")]
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,9 +25,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !UserDefaults.standard.bool(forKey: initialkey) {
             UserDefaults.standard.set(true, forKey: initialkey)
             UserDefaults.standard.set("Younkyum", forKey: userkey)
-            UserDefaults.standard.set(["String"], forKey: followerkey)
+            UserDefaults.standard.set(["Younkyum" ,"plus"], forKey: followerkey)
             user = "Younkyum"
         }
+        
+        followerList = UserDefaults.standard.stringArray(forKey: followerkey) ?? [String]()
+        
+        if followerList.count > 1 {
+            for follower in followerList {
+                if follower != "plus" {
+                    followerCommit.insert(getTodayCommit(user: follower), at: 0)
+                    followerImage.insert(getAvatar(user: follower), at: 0)
+                }
+            }
+        }
+        
+        print(followerCommit)
+        
 
         return true
     }
