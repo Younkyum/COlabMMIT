@@ -116,7 +116,6 @@ func getTodayCommit(user: String) -> Int {
     var todaySum = 0
     
     for userEvent in userRepos {
-        print(changeDateForCommit(date: userEvent.created_at))
         if today <= changeDateForCommit(date: userEvent.created_at) {
             if userEvent.type == "CreateEvent" || userEvent.type == "PushEvent" {
                 todaySum += 1
@@ -207,7 +206,6 @@ func todayToString() -> String {
 func getAvatar(user: String) -> UIImage {
     var run = true
     var returnImage = UIImage(named: "noting")
-    print(run)
     let imageURL = "https://avatars.githubusercontent.com/\(user)"
     guard let url = URL(string: imageURL) else {
         fatalError("Invalid URL")
@@ -227,7 +225,6 @@ func getAvatar(user: String) -> UIImage {
         }
         
         returnImage = image
-        print("run has chagned to false")
         run = false
 
     }.resume()

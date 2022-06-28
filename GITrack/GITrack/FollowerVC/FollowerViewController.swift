@@ -75,11 +75,16 @@ extension FollowerViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        print(followerList[indexPath.row])
-        print(followerList)
-        print(followerCommit)
         tableView.deselectRow(at: indexPath, animated: false)
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "FollowerDetailViewController") as? FollowerDetailViewController else {return}
+        nextVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        
+        nextVC.userName = followerList[indexPath.row]
+        nextVC.userCommit = followerCommit[indexPath.row]
+        nextVC.getUserImage = followerImage[indexPath.row]
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

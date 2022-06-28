@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if !UserDefaults.standard.bool(forKey: initialkey) {
             UserDefaults.standard.set(true, forKey: initialkey)
-            UserDefaults.standard.set("Younkyum", forKey: userkey)
+            UserDefaults.standard.set("Github", forKey: userkey)
             UserDefaults.standard.set(["Younkyum"], forKey: followerkey)
-            user = "Younkyum"
+            user = "Github"
         }
         
         followerList = UserDefaults.standard.stringArray(forKey: followerkey) ?? [String]()
@@ -40,9 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         followerCommit.removeFirst()
         followerImage.removeFirst()
-        
-        print(followerCommit)
-        
 
         return true
     }
