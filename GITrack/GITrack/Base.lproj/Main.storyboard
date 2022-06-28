@@ -273,7 +273,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="osM-za-ma9">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.clockwise" catalog="system" id="nm1-4K-fBZ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="nm1-4K-fBZ">
                             <connections>
                                 <action selector="reloadbutton:" destination="aIK-3n-IhZ" id="obC-EK-lDe"/>
                             </connections>
@@ -301,7 +301,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-bF-6xu">
-                                <rect key="frame" x="24" y="106.66666666666667" width="350" height="2"/>
+                                <rect key="frame" x="16" y="106.66666666666667" width="358" height="2"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="BPG-Hk-6D0"/>
@@ -337,15 +337,15 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력  If you do not know
                         <viewLayoutGuide key="safeArea" id="AKp-Yi-ugI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ilu-bF-6xu" firstAttribute="trailing" secondItem="xMW-si-X9R" secondAttribute="trailingMargin" id="3lT-NH-mYi"/>
                             <constraint firstItem="W0v-wi-Xh6" firstAttribute="leading" secondItem="AKp-Yi-ugI" secondAttribute="leading" constant="25" id="6SX-gz-1eh"/>
+                            <constraint firstItem="ilu-bF-6xu" firstAttribute="leading" secondItem="xMW-si-X9R" secondAttribute="leadingMargin" id="9ul-Gk-pmb"/>
                             <constraint firstItem="Gjv-74-Mri" firstAttribute="centerY" secondItem="xMW-si-X9R" secondAttribute="centerY" id="BZe-kE-58Q"/>
                             <constraint firstItem="W0v-wi-Xh6" firstAttribute="top" secondItem="plV-tl-WLd" secondAttribute="bottom" constant="30" id="C1s-JO-QM6"/>
-                            <constraint firstItem="ilu-bF-6xu" firstAttribute="leading" secondItem="xMW-si-X9R" secondAttribute="leadingMargin" constant="25" id="JTB-WY-zfr"/>
                             <constraint firstItem="AKp-Yi-ugI" firstAttribute="bottom" secondItem="W0v-wi-Xh6" secondAttribute="bottom" constant="50" id="S68-P8-JCy"/>
                             <constraint firstItem="ilu-bF-6xu" firstAttribute="top" secondItem="3cS-Ix-1po" secondAttribute="bottom" id="SzU-Dh-5QK"/>
                             <constraint firstItem="plV-tl-WLd" firstAttribute="top" secondItem="ilu-bF-6xu" secondAttribute="bottom" constant="50" id="USI-zh-eGI"/>
                             <constraint firstItem="AKp-Yi-ugI" firstAttribute="trailing" secondItem="W0v-wi-Xh6" secondAttribute="trailing" constant="25" id="Vdm-82-Udk"/>
-                            <constraint firstItem="ilu-bF-6xu" firstAttribute="trailing" secondItem="xMW-si-X9R" secondAttribute="trailingMargin" constant="25" id="VmS-2Y-Fyv"/>
                             <constraint firstItem="plV-tl-WLd" firstAttribute="centerX" secondItem="xMW-si-X9R" secondAttribute="centerX" id="Ylg-Zi-2Ia"/>
                             <constraint firstItem="Gjv-74-Mri" firstAttribute="centerX" secondItem="xMW-si-X9R" secondAttribute="centerX" id="iI2-bG-mVk"/>
                             <constraint firstItem="3cS-Ix-1po" firstAttribute="top" secondItem="AKp-Yi-ugI" secondAttribute="top" constant="25" id="ixr-vz-T8p"/>
@@ -475,13 +475,13 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력  If you do not know
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <image name="arrow.counterclockwise" catalog="system" width="113" height="128"/>
         <image name="icloud.and.arrow.up" catalog="system" width="128" height="108"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.2" catalog="system" width="128" height="82"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="person.and.arrow.left.and.arrow.right" catalog="system" width="128" height="89"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

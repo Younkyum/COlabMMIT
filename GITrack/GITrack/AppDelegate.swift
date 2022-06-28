@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !UserDefaults.standard.bool(forKey: initialkey) {
             UserDefaults.standard.set(true, forKey: initialkey)
             UserDefaults.standard.set("Younkyum", forKey: userkey)
-            UserDefaults.standard.set(["Younkyum" ,"plus"], forKey: followerkey)
+            UserDefaults.standard.set(["Younkyum"], forKey: followerkey)
             user = "Younkyum"
         }
         
@@ -33,13 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if followerList.count > 1 {
             for follower in followerList {
-                if follower != "plus" {
-                    followerCommit.append(getTodayCommit(user: follower))
-                    followerImage.append(getAvatar(user: follower))
-                } else {
-                    followerCommit.append(-1)
-                    followerImage.append(UIImage(systemName: "person"))
-                }
+                followerCommit.append(getTodayCommit(user: follower))
+                followerImage.append(getAvatar(user: follower))
             }
         }
         

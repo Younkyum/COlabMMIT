@@ -14,6 +14,7 @@ class FollowerViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
         followerCommit.removeAll()
         followerImage.removeAll()
         for follower in followerList {
@@ -34,24 +35,16 @@ class FollowerViewController: UIViewController {
         self.followerTableView.delegate = self
         self.followerTableView.dataSource = self
         
+        
         followerTableView.register(UINib(nibName: "FollowerTableViewCell", bundle: nil), forCellReuseIdentifier: "FollowerTableViewCell")
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func reloadbutton(_ sender: Any) {
-        followerCommit.removeAll()
-        followerImage.removeAll()
-        for follower in followerList {
-            if follower != "plus" {
-                followerCommit.append(getTodayCommit(user: follower))
-                followerImage.append(getAvatar(user: follower))
-            } else {
-                followerCommit.append(-1)
-                followerImage.append(UIImage(systemName: "person"))
-            }
-        }
-        followerTableView.reloadData()
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AddNewFollowerViewController") as? AddNewFollowerViewController else {return}
+        nextVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     
@@ -68,20 +61,11 @@ extension FollowerViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         
-        if followerList[indexPath.row] == "plus" {
-            cell.followerIDLabel.alpha = 0
-            cell.followerCommitLabel.alpha = 0
-            cell.followerAvatarImage.alpha = 0
-            cell.plusImage.alpha = 1
-        } else {
-            cell.followerCommitLabel.text = String(followerCommit[indexPath.row])
-            cell.followerIDLabel.text = followerList[indexPath.row]
-            cell.followerAvatarImage.image = followerImage[indexPath.row]
-            cell.plusImage.alpha = 0
-        }
         
-        print(cell.followerIDLabel.text)
-        
+        cell.followerCommitLabel.text = String(followerCommit[indexPath.row])
+        cell.followerIDLabel.text = followerList[indexPath.row]
+        cell.followerAvatarImage.image = followerImage[indexPath.row]
+        cell.plusImage.alpha = 0
         
         return cell
     }
@@ -91,17 +75,31 @@ extension FollowerViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch followerList[indexPath.row] {
-        case "plus":
-            guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AddNewFollowerViewController") as? AddNewFollowerViewController else {return}
-            nextVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-            self.navigationController?.pushViewController(nextVC, animated: true)
-        default:
-            print(followerList[indexPath.row])
-            print(followerList)
-            print(followerCommit)
-        }
+
+        print(followerList[indexPath.row])
+        print(followerList)
+        print(followerCommit)
         tableView.deselectRow(at: indexPath, animated: false)
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            
+            followerList.remove(at: indexPath.row)
+            followerCommit.remove(at: indexPath.row)
+            followerImage.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            tableView.endUpdates()
+            
+            UserDefaults.standard.set(followerList, forKey: followerkey)
+        }
+    }
+
 }
 

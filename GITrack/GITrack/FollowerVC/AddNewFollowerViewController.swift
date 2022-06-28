@@ -18,6 +18,7 @@ class AddNewFollowerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("reloaded")
         waitIndicator.alpha = 0
 
         // Do any additional setup after loading the view.
