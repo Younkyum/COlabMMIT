@@ -15,6 +15,13 @@ class FollowerTableViewCell: UITableViewCell {
     @IBOutlet weak var plusImage: UIImageView!
     @IBOutlet weak var followerCommitLabel: UILabel!
     
+    override func prepareForReuse() {
+        followerIDLabel.text = "follower"
+        followerAvatarImage.image = UIImage(systemName: "person")
+        followerCommitLabel.text = "0"
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

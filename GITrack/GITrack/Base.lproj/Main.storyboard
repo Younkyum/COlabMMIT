@@ -259,6 +259,7 @@
                                 <connections>
                                     <outlet property="dataSource" destination="aIK-3n-IhZ" id="LMf-rU-teL"/>
                                     <outlet property="delegate" destination="aIK-3n-IhZ" id="sm5-Ke-hrn"/>
+                                    <outlet property="prefetchDataSource" destination="aIK-3n-IhZ" id="JQl-Qv-HTG"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -271,7 +272,13 @@
                             <constraint firstItem="mH3-Th-gLt" firstAttribute="top" secondItem="DTP-Al-aYO" secondAttribute="top" id="kaa-dX-ybJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="osM-za-ma9"/>
+                    <navigationItem key="navigationItem" id="osM-za-ma9">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.clockwise" catalog="system" id="nm1-4K-fBZ">
+                            <connections>
+                                <action selector="reloadbutton:" destination="aIK-3n-IhZ" id="obC-EK-lDe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="followerTableView" destination="mH3-Th-gLt" id="95k-hE-0wb"/>
                     </connections>
@@ -293,7 +300,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-bF-6xu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-bF-6xu">
                                 <rect key="frame" x="24" y="106.66666666666667" width="350" height="2"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
@@ -310,8 +317,8 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력  If you do not know
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plV-tl-WLd">
-                                <rect key="frame" x="157" y="158.66666666666666" width="85" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plV-tl-WLd">
+                                <rect key="frame" x="152.66666666666666" y="158.66666666666666" width="85" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
                                 <connections>
@@ -333,10 +340,13 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력  If you do not know
                             <constraint firstItem="W0v-wi-Xh6" firstAttribute="leading" secondItem="AKp-Yi-ugI" secondAttribute="leading" constant="25" id="6SX-gz-1eh"/>
                             <constraint firstItem="Gjv-74-Mri" firstAttribute="centerY" secondItem="xMW-si-X9R" secondAttribute="centerY" id="BZe-kE-58Q"/>
                             <constraint firstItem="W0v-wi-Xh6" firstAttribute="top" secondItem="plV-tl-WLd" secondAttribute="bottom" constant="30" id="C1s-JO-QM6"/>
+                            <constraint firstItem="ilu-bF-6xu" firstAttribute="leading" secondItem="xMW-si-X9R" secondAttribute="leadingMargin" constant="25" id="JTB-WY-zfr"/>
                             <constraint firstItem="AKp-Yi-ugI" firstAttribute="bottom" secondItem="W0v-wi-Xh6" secondAttribute="bottom" constant="50" id="S68-P8-JCy"/>
                             <constraint firstItem="ilu-bF-6xu" firstAttribute="top" secondItem="3cS-Ix-1po" secondAttribute="bottom" id="SzU-Dh-5QK"/>
                             <constraint firstItem="plV-tl-WLd" firstAttribute="top" secondItem="ilu-bF-6xu" secondAttribute="bottom" constant="50" id="USI-zh-eGI"/>
                             <constraint firstItem="AKp-Yi-ugI" firstAttribute="trailing" secondItem="W0v-wi-Xh6" secondAttribute="trailing" constant="25" id="Vdm-82-Udk"/>
+                            <constraint firstItem="ilu-bF-6xu" firstAttribute="trailing" secondItem="xMW-si-X9R" secondAttribute="trailingMargin" constant="25" id="VmS-2Y-Fyv"/>
+                            <constraint firstItem="plV-tl-WLd" firstAttribute="centerX" secondItem="xMW-si-X9R" secondAttribute="centerX" id="Ylg-Zi-2Ia"/>
                             <constraint firstItem="Gjv-74-Mri" firstAttribute="centerX" secondItem="xMW-si-X9R" secondAttribute="centerX" id="iI2-bG-mVk"/>
                             <constraint firstItem="3cS-Ix-1po" firstAttribute="top" secondItem="AKp-Yi-ugI" secondAttribute="top" constant="25" id="ixr-vz-T8p"/>
                             <constraint firstItem="W0v-wi-Xh6" firstAttribute="top" secondItem="plV-tl-WLd" secondAttribute="bottom" constant="30" id="nfE-z7-yRm"/>
@@ -465,6 +475,7 @@ e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력  If you do not know
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <image name="arrow.counterclockwise" catalog="system" width="113" height="128"/>
         <image name="icloud.and.arrow.up" catalog="system" width="128" height="108"/>
         <image name="person" catalog="system" width="128" height="121"/>

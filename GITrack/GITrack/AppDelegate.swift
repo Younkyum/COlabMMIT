@@ -34,11 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if followerList.count > 1 {
             for follower in followerList {
                 if follower != "plus" {
-                    followerCommit.insert(getTodayCommit(user: follower), at: 0)
-                    followerImage.insert(getAvatar(user: follower), at: 0)
+                    followerCommit.append(getTodayCommit(user: follower))
+                    followerImage.append(getAvatar(user: follower))
+                } else {
+                    followerCommit.append(-1)
+                    followerImage.append(UIImage(systemName: "person"))
                 }
             }
         }
+        
+        followerCommit.removeFirst()
+        followerImage.removeFirst()
         
         print(followerCommit)
         
