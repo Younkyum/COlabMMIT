@@ -280,6 +280,79 @@
             </objects>
             <point key="canvasLocation" x="577" y="345"/>
         </scene>
+        <!--Add New Follower View Controller-->
+        <scene sceneID="ErV-iV-nYF">
+            <objects>
+                <viewController storyboardIdentifier="AddNewFollowerViewController" id="1aS-IG-BXA" customClass="AddNewFollowerViewController" customModule="GITrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xMW-si-X9R">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g.) Younkyum" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3cS-Ix-1po">
+                                <rect key="frame" x="25" y="69" width="340" height="37.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ilu-bF-6xu">
+                                <rect key="frame" x="24" y="106.66666666666667" width="350" height="2"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="BPG-Hk-6D0"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0v-wi-Xh6">
+                                <rect key="frame" x="25" y="223.66666666666669" width="340" height="536.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">아이디를 모르겠다면?
+https://github.com/(User name)의 (User name)을 입력해 주세요
+e.g.) www.github.com/Younkyum 인 경우 Younkyum 입력  If you do not know your ID: In 'https://github.com/(User name)', enter (User name) e.g.) if 'www.github.com/Younkyum', then enter 'Younkyum'</string>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plV-tl-WLd">
+                                <rect key="frame" x="157" y="158.66666666666666" width="85" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmButtonPush:" destination="4Ym-ae-iP2" eventType="touchUpInside" id="rPv-Cs-pGp"/>
+                                    <action selector="confirmButtonPush:" destination="1aS-IG-BXA" eventType="touchUpInside" id="tvP-S5-rVO"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Gjv-74-Mri">
+                                <rect key="frame" x="170" y="397" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Jxa-lV-3Vf"/>
+                                    <constraint firstAttribute="height" constant="50" id="gVP-pe-HGi"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AKp-Yi-ugI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W0v-wi-Xh6" firstAttribute="leading" secondItem="AKp-Yi-ugI" secondAttribute="leading" constant="25" id="6SX-gz-1eh"/>
+                            <constraint firstItem="Gjv-74-Mri" firstAttribute="centerY" secondItem="xMW-si-X9R" secondAttribute="centerY" id="BZe-kE-58Q"/>
+                            <constraint firstItem="W0v-wi-Xh6" firstAttribute="top" secondItem="plV-tl-WLd" secondAttribute="bottom" constant="30" id="C1s-JO-QM6"/>
+                            <constraint firstItem="AKp-Yi-ugI" firstAttribute="bottom" secondItem="W0v-wi-Xh6" secondAttribute="bottom" constant="50" id="S68-P8-JCy"/>
+                            <constraint firstItem="ilu-bF-6xu" firstAttribute="top" secondItem="3cS-Ix-1po" secondAttribute="bottom" id="SzU-Dh-5QK"/>
+                            <constraint firstItem="plV-tl-WLd" firstAttribute="top" secondItem="ilu-bF-6xu" secondAttribute="bottom" constant="50" id="USI-zh-eGI"/>
+                            <constraint firstItem="AKp-Yi-ugI" firstAttribute="trailing" secondItem="W0v-wi-Xh6" secondAttribute="trailing" constant="25" id="Vdm-82-Udk"/>
+                            <constraint firstItem="Gjv-74-Mri" firstAttribute="centerX" secondItem="xMW-si-X9R" secondAttribute="centerX" id="iI2-bG-mVk"/>
+                            <constraint firstItem="3cS-Ix-1po" firstAttribute="top" secondItem="AKp-Yi-ugI" secondAttribute="top" constant="25" id="ixr-vz-T8p"/>
+                            <constraint firstItem="W0v-wi-Xh6" firstAttribute="top" secondItem="plV-tl-WLd" secondAttribute="bottom" constant="30" id="nfE-z7-yRm"/>
+                            <constraint firstItem="AKp-Yi-ugI" firstAttribute="trailing" secondItem="3cS-Ix-1po" secondAttribute="trailing" constant="25" id="qXo-Rr-bZL"/>
+                            <constraint firstItem="3cS-Ix-1po" firstAttribute="leading" secondItem="AKp-Yi-ugI" secondAttribute="leading" constant="25" id="sdt-ft-wSl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputField" destination="3cS-Ix-1po" id="LUc-x7-yb4"/>
+                        <outlet property="waitIndicator" destination="Gjv-74-Mri" id="XcB-W9-M2e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w2A-Xb-W6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1334" y="345"/>
+        </scene>
         <!--Item-->
         <scene sceneID="2yh-6g-qYO">
             <objects>

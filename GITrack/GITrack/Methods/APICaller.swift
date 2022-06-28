@@ -207,6 +207,7 @@ func todayToString() -> String {
 func getAvatar(user: String) -> UIImage {
     var run = true
     var returnImage = UIImage(named: "noting")
+    print(run)
     let imageURL = "https://avatars.githubusercontent.com/\(user)"
     guard let url = URL(string: imageURL) else {
         fatalError("Invalid URL")
@@ -226,6 +227,7 @@ func getAvatar(user: String) -> UIImage {
         }
         
         returnImage = image
+        print("run has chagned to false")
         run = false
 
     }.resume()

@@ -12,6 +12,9 @@ class FollowerViewController: UIViewController {
     
     @IBOutlet weak var followerTableView: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        followerTableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +54,20 @@ extension FollowerViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
+        return 75
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch followerList[indexPath.row] {
+        case "plus":
+            guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "AddNewFollowerViewController") as? AddNewFollowerViewController else {return}
+            nextVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        default:
+            print(followerList[indexPath.row])
+            print(followerList)
+            print(followerCommit)
+            print(followerImage)
+        }
+    }
 }

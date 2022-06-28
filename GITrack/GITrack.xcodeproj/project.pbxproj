@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4186DD7B286AA4CB0016252F /* AddNewFollowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4186DD7A286AA4CB0016252F /* AddNewFollowerViewController.swift */; };
 		419887DB2868C4490089587C /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419887D92868C4490089587C /* FollowerTableViewCell.swift */; };
 		419887DC2868C4490089587C /* FollowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 419887DA2868C4490089587C /* FollowerTableViewCell.xib */; };
 		41E7396E2865FEA00039958D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E7396D2865FEA00039958D /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4186DD7A286AA4CB0016252F /* AddNewFollowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFollowerViewController.swift; sourceTree = "<group>"; };
 		419887D92868C4490089587C /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		419887DA2868C4490089587C /* FollowerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowerTableViewCell.xib; sourceTree = "<group>"; };
 		41E7396A2865FEA00039958D /* GITrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GITrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 				41E7399428678C460039958D /* FollowerViewController.swift */,
 				419887D92868C4490089587C /* FollowerTableViewCell.swift */,
 				419887DA2868C4490089587C /* FollowerTableViewCell.xib */,
+				4186DD7A286AA4CB0016252F /* AddNewFollowerViewController.swift */,
 			);
 			path = FollowerVC;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41E739922866E7770039958D /* API_commit.swift in Sources */,
+				4186DD7B286AA4CB0016252F /* AddNewFollowerViewController.swift in Sources */,
 				41E7398828660BEE0039958D /* extension-UIAlert.swift in Sources */,
 				419887DB2868C4490089587C /* FollowerTableViewCell.swift in Sources */,
 				41E7398B286622B40039958D /* UserViewController.swift in Sources */,
