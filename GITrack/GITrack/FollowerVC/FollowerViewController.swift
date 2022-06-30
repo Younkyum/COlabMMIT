@@ -18,13 +18,8 @@ class FollowerViewController: UIViewController {
         followerCommit.removeAll()
         followerImage.removeAll()
         for follower in followerList {
-            if follower != "plus" {
-                followerCommit.append(getTodayCommit(user: follower))
-                followerImage.append(getAvatar(user: follower))
-            } else {
-                followerCommit.append(-1)
-                followerImage.append(UIImage(systemName: "person"))
-            }
+            followerCommit.append(getTodayCommit(user: follower))
+            followerImage.append(getAvatar(user: follower))
         }
         followerTableView.reloadData()
     }
