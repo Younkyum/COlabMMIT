@@ -127,66 +127,6 @@ func getTodayCommit(user: String) -> Int {
     
     return todaySum
 }
-/*
-
-func commitCounter(repo: String, user: String) -> Int {
-    var run = true
-    let repoURL = "https://api.github.com/repos/\(user)/\(repo)/commits"
-    var commits = [repoCommit(commit: Commit(author: Author(date: "today")))]
-    
-    guard let url = URL(string: repoURL) else {
-        fatalError("Invalid URL")
-    }
-
-    let session = URLSession.shared
-    let task = session.dataTask(with: url) { (data, response, error) in
-        if let error = error { // 에러가 발생함
-            print(error)
-            return
-        }
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            return
-        }
-        
-        guard (200...299).contains(httpResponse.statusCode) else {
-            return
-        }
-        
-        guard let data = data else { // 데이터 동기화 안될경우 오류 발생
-            fatalError("Invalid Data")
-        }
-        
-        do {
-            let decoder = JSONDecoder()
-
-            
-            commits = try decoder.decode([repoCommit].self, from: data)
-            run = false
-
-        } catch {
-            print(error)
-        }
-    }
-    task.resume()
-    while run {
-    }
-    
-    
-    var sum = 0
-    let today = todayToString()
-    
-    for x in commits {
-        if today == changeDateForCommit(date: x.commit.author.date) {
-            sum += 1
-        } else {
-            break
-        }
-    }
-    return sum
-}
- */
-
 func changeDateForCommit(date: String) -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"

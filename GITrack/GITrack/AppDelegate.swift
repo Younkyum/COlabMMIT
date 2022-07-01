@@ -15,11 +15,14 @@ var user = "user"
 var followerList: [String] = []
 var followerCommit: [Int] = []
 var followerImage: [UIImage] = []
+var needRefresh = true
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        print(Date.now)
         
         
         if !UserDefaults.standard.bool(forKey: initialkey) {
@@ -31,13 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         followerList = UserDefaults.standard.stringArray(forKey: followerkey) ?? [String]()
         
-        if followerList.count >= 1 {
-            for follower in followerList {
-                followerCommit.append(getTodayCommit(user: follower))
-                followerImage.append(getAvatar(user: follower))
-            }
-        }
-
+        needRefresh = true
+        
         return true
     }
 

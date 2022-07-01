@@ -25,6 +25,8 @@ class AddNewFollowerViewController: UIViewController {
     }
     
     @IBAction func confirmButtonPush(_ sender: Any) {
+        self.waitIndicator.alpha = 1
+        self.waitIndicator.startAnimating()
         getUserIsReal(user: inputField.text!)
     }
     
@@ -64,6 +66,9 @@ class AddNewFollowerViewController: UIViewController {
                  UserDefaults.standard.set(list, forKey: followerkey)
                  print(UserDefaults.standard.string(forKey: followerkey))
                  followerList.insert(user, at: 0)
+                 needRefresh = true
+                 self.waitIndicator.stopAnimating()
+                 self.waitIndicator.alpha = 0
                  self.navigationController?.popViewController(animated: true)
              }
          }

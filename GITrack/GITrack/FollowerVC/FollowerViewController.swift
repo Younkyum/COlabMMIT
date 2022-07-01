@@ -9,19 +9,20 @@ import UIKit
 
 class FollowerViewController: UIViewController {
 
-    
     @IBOutlet weak var followerTableView: UITableView!
     
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        followerCommit.removeAll()
-        followerImage.removeAll()
-        for follower in followerList {
-            followerCommit.append(getTodayCommit(user: follower))
-            followerImage.append(getAvatar(user: follower))
+        if needRefresh {
+            followerCommit.removeAll()
+            followerImage.removeAll()
+            for follower in followerList {
+                followerCommit.append(getTodayCommit(user: follower))
+                followerImage.append(getAvatar(user: follower))
+            }
+            followerTableView.reloadData()
         }
-        followerTableView.reloadData()
+        needRefresh = false
     }
     
     override func viewDidLoad() {
@@ -97,6 +98,7 @@ extension FollowerViewController: UITableViewDelegate, UITableViewDataSource {
             
             tableView.endUpdates()
             
+            needRefresh = true
             UserDefaults.standard.set(followerList, forKey: followerkey)
         }
     }
